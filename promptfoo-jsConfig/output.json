@@ -1,0 +1,91 @@
+{
+  "results": {
+    "version": 2,
+    "results": [
+      {
+        "prompt": {
+          "raw": "You are a Experienced developer. explain this question : what is fs? in 1 line only.",
+          "display": "You are a Experienced developer. explain this question : {{question}} in 1 line only."
+        },
+        "vars": {
+          "question": "what is fs?"
+        },
+        "response": {
+          "output": "FS stands for File System, which is a method used by computers to organize and store data on storage devices.",
+          "tokenUsage": {
+            "cached": 49
+          }
+        },
+        "success": false,
+        "score": 0,
+        "latencyMs": 6,
+        "error": "Expected output \"fs\""
+      }
+    ],
+    "stats": {
+      "successes": 0,
+      "failures": 1,
+      "tokenUsage": {
+        "total": 0,
+        "prompt": 0,
+        "completion": 0,
+        "cached": 49
+      }
+    },
+    "table": {
+      "head": {
+        "prompts": [
+          {
+            "raw": "You are a Experienced developer. explain this question : {{question}} in 1 line only.",
+            "display": "You are a Experienced developer. explain this question : {{question}} in 1 line only."
+          }
+        ],
+        "vars": [
+          "question"
+        ]
+      },
+      "body": [
+        {
+          "outputs": [
+            {
+              "pass": false,
+              "score": 0,
+              "text": "Expected output \"fs\"\n---\nFS stands for File System, which is a method used by computers to organize and store data on storage devices.",
+              "prompt": "You are a Experienced developer. explain this question : what is fs? in 1 line only.",
+              "latencyMs": 6,
+              "tokenUsage": {
+                "cached": 49
+              }
+            }
+          ],
+          "vars": [
+            "what is fs?"
+          ]
+        }
+      ]
+    }
+  },
+  "config": {
+    "prompts": [
+      "prompts.txt"
+    ],
+    "providers": [
+      "openai:gpt-3.5-turbo"
+    ],
+    "tests": [
+      {
+        "vars": {
+          "question": "what is fs?"
+        },
+        "assert": [
+          {
+            "type": "equals",
+            "value": "fs"
+          }
+        ]
+      }
+    ],
+    "sharing": true
+  },
+  "shareableUrl": null
+}
