@@ -5,16 +5,22 @@ module.exports = {
   tests: [
     {
       vars: {
-        question: "what is fs?"
+        question: `Which conservation principle is applicable in the case of the motion of a rocket?
+
+        (1) Conservation of mass
+        (2) Conservation of charge
+        (3) Conservation of momentum
+        (4) Conservation of energy`
       },
       assert: [
         {
-        type: "equals",
-        value: "fs"
+        type: "similar",
+        value: `{"subjectTags": [{"Level 1": "Physics", "Level 2": "Mechanics", "Level 3": "Laws of Motions"}], "Skills": ["Knowledge of principles and generalizations"]}`,
+        threshold: 0.8
       },
     ]
     },
     
   ],
-  outputPath: "output.html"
+  outputPath: "output.json"
 };
