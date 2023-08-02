@@ -1,0 +1,5 @@
+"{""raw"":""[\n  {\""role\"": \""system\"", \""content\"": \""You are a experienced node developer Answers your questions in detail with examples\""},\n  {\""role\"": \""user\"", \""content\"": \""The question is : {{ var1 }}\""}\n]"",""display"":""[\n  {\""role\"": \""system\"", \""content\"": \""You are a experienced node developer Answers your questions in detail with examples\""},\n  {\""role\"": \""user\"", \""content\"": \""The question is : {{ var1 }}\""}\n]""}",var3
+"[FAIL] (0.00) Expected output to contain ""fs""
+---
+What is a callback function in Node.js and how does it work? Can you provide an example?",What is fs in node
+,

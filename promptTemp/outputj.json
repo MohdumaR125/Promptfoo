@@ -1,0 +1,105 @@
+{
+  "results": {
+    "version": 2,
+    "results": [
+      {
+        "prompt": {
+          "raw": "Translate the following text: How&#39;s it going? into French",
+          "display": "Translate the following text: {{input}} into {{language}}"
+        },
+        "vars": {
+          "language": "French",
+          "input": "How's it going?"
+        },
+        "response": {
+          "output": "Comment ça va ?",
+          "tokenUsage": {
+            "total": 25,
+            "prompt": 21,
+            "completion": 4
+          }
+        },
+        "success": false,
+        "score": 0,
+        "latencyMs": 989,
+        "error": "Expected output to contain \"geh\""
+      }
+    ],
+    "stats": {
+      "successes": 0,
+      "failures": 1,
+      "tokenUsage": {
+        "total": 25,
+        "prompt": 21,
+        "completion": 4,
+        "cached": 0
+      }
+    },
+    "table": {
+      "head": {
+        "prompts": [
+          {
+            "raw": "Translate the following text: {{input}} into {{language}}",
+            "display": "Translate the following text: {{input}} into {{language}}"
+          }
+        ],
+        "vars": [
+          "input",
+          "language"
+        ]
+      },
+      "body": [
+        {
+          "outputs": [
+            {
+              "pass": false,
+              "score": 0,
+              "text": "Expected output to contain \"geh\"\n---\nComment ça va ?",
+              "prompt": "Translate the following text: How&#39;s it going? into French",
+              "latencyMs": 989,
+              "tokenUsage": {
+                "total": 25,
+                "prompt": 21,
+                "completion": 4
+              }
+            }
+          ],
+          "vars": [
+            "How's it going?",
+            "French"
+          ]
+        }
+      ]
+    }
+  },
+  "config": {
+    "prompts": [
+      "prompts.txt"
+    ],
+    "providers": [
+      "openai:gpt-3.5-turbo-0613"
+    ],
+    "tests": [
+      {
+        "description": "Test translation to German",
+        "vars": {
+          "language": "French",
+          "input": "How's it going?"
+        },
+        "assert": [
+          {
+            "type": "contains",
+            "value": "geh"
+          },
+          {
+            "type": "similar",
+            "value": "was geht",
+            "threshold": 0.9
+          }
+        ]
+      }
+    ],
+    "sharing": true
+  },
+  "shareableUrl": null
+}

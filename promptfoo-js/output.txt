@@ -1,0 +1,2 @@
+"{""raw"":""Rephrase this in English: {{body}}"",""display"":""Rephrase this in English: {{body}}""}","{""raw"":""Rephrase this like a pirate: {{body}}"",""display"":""Rephrase this like a pirate: {{body}}""}"
+[PASS] (1.00) Can you please rephrase this sentence in English?,"[PASS] (1.00) Arrr, me hearties! Give me a hand in rephrasin' this like a true pirate, ye scurvy dogs!"

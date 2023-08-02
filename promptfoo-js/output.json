@@ -1,0 +1,121 @@
+{
+  "results": {
+    "version": 2,
+    "results": [
+      {
+        "prompt": {
+          "raw": "Rephrase this in English: ",
+          "display": "Rephrase this in English: {{body}}"
+        },
+        "vars": {},
+        "response": {
+          "output": "Can you please rephrase this sentence in English?",
+          "tokenUsage": {
+            "total": 24,
+            "prompt": 14,
+            "completion": 10
+          }
+        },
+        "success": true,
+        "score": 1,
+        "latencyMs": 1732
+      },
+      {
+        "prompt": {
+          "raw": "Rephrase this like a pirate: ",
+          "display": "Rephrase this like a pirate: {{body}}"
+        },
+        "vars": {},
+        "response": {
+          "output": "Arrr, me hearties! Give me a hand in rephrasin' this like a true pirate, ye scurvy dogs!",
+          "tokenUsage": {
+            "total": 44,
+            "prompt": 15,
+            "completion": 29
+          }
+        },
+        "success": true,
+        "score": 1,
+        "latencyMs": 2538
+      }
+    ],
+    "stats": {
+      "successes": 2,
+      "failures": 0,
+      "tokenUsage": {
+        "total": 68,
+        "prompt": 29,
+        "completion": 39,
+        "cached": 0
+      }
+    },
+    "table": {
+      "head": {
+        "prompts": [
+          {
+            "raw": "Rephrase this in English: {{body}}",
+            "display": "Rephrase this in English: {{body}}"
+          },
+          {
+            "raw": "Rephrase this like a pirate: {{body}}",
+            "display": "Rephrase this like a pirate: {{body}}"
+          }
+        ],
+        "vars": []
+      },
+      "body": [
+        {
+          "outputs": [
+            {
+              "pass": true,
+              "score": 1,
+              "text": "Can you please rephrase this sentence in English?",
+              "prompt": "Rephrase this in English: ",
+              "latencyMs": 1732,
+              "tokenUsage": {
+                "total": 24,
+                "prompt": 14,
+                "completion": 10
+              }
+            },
+            {
+              "pass": true,
+              "score": 1,
+              "text": "Arrr, me hearties! Give me a hand in rephrasin' this like a true pirate, ye scurvy dogs!",
+              "prompt": "Rephrase this like a pirate: ",
+              "latencyMs": 2538,
+              "tokenUsage": {
+                "total": 44,
+                "prompt": 15,
+                "completion": 29
+              }
+            }
+          ],
+          "vars": []
+        }
+      ]
+    }
+  },
+  "config": {
+    "prompts": [
+      "Rephrase this in English: {{body}}",
+      "Rephrase this like a pirate: {{body}}"
+    ],
+    "providers": [
+      "openai:gpt-3.5-turbo"
+    ],
+    "tests": {
+      "vars": {
+        "body": "Kaise ho tum?"
+      },
+      "assert": [
+        {
+          "type": "contains",
+          "value": "How"
+        }
+      ]
+    },
+    "outputPath": "output.json"
+  },
+  "shareableUrl": null
+}
