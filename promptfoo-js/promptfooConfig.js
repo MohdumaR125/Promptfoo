@@ -40,15 +40,15 @@ try {
           if(Level3 === expectedLevel3) tempAcc += 20;
           accuracy += tempAcc;
           totalTests++; 
-
-          console.log("output-->", Level1, "expected-->", expectedLevel1)
-          console.log("output-->", Level2, "expected-->", expectedLevel2)
-          console.log("output-->", Level3, "expected-->", expectedLevel3)
+          console.log("=====================================================")
+          console.log("output--> Level1", Level1, "expected--> Level1", expectedLevel1, expectedLevel1 === Level1)
+          console.log("output--> Level2", Level2, "expected--> Level2", expectedLevel2, expectedLevel2 === Level2)
+          console.log("output--> Level3", Level3, "expected--> Level3", expectedLevel3, expectedLevel3 === Level3)
           const pass = accuracy >= 90 ? true : false;
           return {
             pass,
             score: tempAcc,
-            reason: pass ? 'Output contained substring' : 'Output did not contain substring',
+            reason: pass ? 'output matched' : 'Output did not matched',
           };
         }
       }
@@ -59,7 +59,7 @@ try {
   });
   console.log('RESULTS:');
   console.log(results);
-
+  console.log("total accuracy", accuracy, "Total Tests", totalTests);
   const finalAccuracy = accuracy/totalTests
-  console.log("accuracy",finalAccuracy);
+  console.log("Commulative Accuracy",finalAccuracy);
 })();
