@@ -1,0 +1,14 @@
+question,__expected
+"""In the given sentences, one word has been given in bold. Below each sentence five words are suggested, one of which can replace the word given in bold without changing the meaning of the sentence. Find out the appropriate word in the given sentence.
+
+The content of this passage relates to the Mughal period.
+(1) depicts    (2) shows
+(3) seems    (4) happens
+(5) pertains""","{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Mechanics"", ""Level3"": ""Laws of Motions""}, ""skillTags"": [""Knowledge of principles and generalizations""]}"
+Gurkiran’s birthday is on Sunday 21st May. On what day of the week will be Shreyas’s birthday in the same year if Shreyas was born on 14th November?,"{""subjectTags"": {""Level1"": ""Reasoning"", ""Level2"": ""Verbal Reasoning"", ""Level3"": ""Calender""}, ""skillTags"": [""Inferring"", ""Knowledge of subject specific techniques and methods""]}"
+"Which of the following is called GDP Deflator?
+
+(1) Ratio of nominal to real GDP
+(2) Ratio of nominal to real GNP
+(3) Ratio of nominal to real CPI
+(4) Ratio of real to nominal GNP","{""subjectTags"": {""Level1"": ""Maths"", ""Level2"": ""Physics"", ""Level3"": ""GDP Deflator""}, ""skillTags"": [""analyzing""]}"
