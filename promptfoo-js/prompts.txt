@@ -10,7 +10,7 @@ General Physics, Mechanics, Number Systems, Number of Zeroes, Fluid Mechanics, V
 
 Step 2 - You want to add a Skill tag according to Bloom's taxonomy. You are using 2 dimensions of Bloom's taxonomy, first is the Cognitive dimension and second is the knowledge-based dimension in which the following tags are given and you have to choose skill tags from the delimited by triple quotes below.
 
-Skill tags: “””Recognizing, Recalling, Implementing, Inferring, Interpreting, Classifying, Inferring, Implementing, Comparing, Organizing, Differentiating, Analyzing, Attributing, Checking, Knowledge of terminology, Knowledge of specific details and elements, Knowledge of classifications and categories, Knowledge of subject-specific skills and algorithms, Knowledge of subject-specific techniques and methods, Knowledge of principles and generalizations”””
+Skill tags: “””Recognizing, Recalling, Implementing, Inferring, Interpreting, Classifying, Inferring, Implementing, Comparing, Organizing, Differentiating, Analyzing, Attributing, Checking, Knowledge of terminology, Knowledge of specific details and elements, Knowledge of classifications and categories, Knowledge of subject specific skills and algorithms, Knowledge of subject specific techniques and methods, Knowledge of principles and generalizations”””
 
 Answer should be single line JSON for e.g. {"skillTags": ["tag1", "tag2","tag3", …]}. skill tags may be 1 or more than one. 
 Skill tag should be attached on the basis of direction given below :
@@ -47,6 +47,6 @@ Knowledge of principles and generalizations: when any principle or formula is as
 
 Knowledge of subject specific skills and algorithms: This tag used when according to question there is a requirement to use the specific skills like if the question asked to select the correct alternative to indicate the arrangement of the following words in a logical and meaningful order. Here, in this question, one should have the skills of arranging in order. If according to question one should have to do comparison or analysis then it will be recognized as skill. Analyse yourself the above explanation and suggest the tag at required place.
 
-Knowledge of subject-specific technique and method: this skill tag should be attached with implementing skill tag or when their is a formula required to applied in queston. 
+Knowledge of subject specific techniques and methods: this skill tag should be attached with implementing skill tag or when their is a formula required to applied in queston. 
 
 Question: {{question}}

@@ -8,6 +8,8 @@ try {
 }
 (async () => {
   let accuracy = 0
+  let totalSubjectAccuracy = 0;
+  let totalSkillAccuracy = 0;
   let totalTests = 0;
   const results = await promptfoo.evaluate({
     prompts: [`${prompts}`],
@@ -19,7 +21,12 @@ try {
         {
         type: "javascript",
         value: (output, testCase)=>{
-          let tempAcc = 0;
+          console.log("======================================================")
+          totalTests++;
+          console.log(`<<< TEST ${totalTests}`);
+          let testAccuracy = 0;
+          let subjectAccuracy = 0
+          let skillAccuracy = 0
           // Output
           const response = JSON.parse(output)
           const {subjectTags, skillTags} = response
@@ -34,20 +41,52 @@ try {
           const expectedLevel2 = expectedSubjectTags.Level2
           const expectedLevel3 = expectedSubjectTags.Level3
 
-          // Comparison
-          if(Level1 === expectedLevel1) tempAcc += 50;
-          if(Level2 === expectedLevel2) tempAcc += 30;
-          if(Level3 === expectedLevel3) tempAcc += 20;
-          accuracy += tempAcc;
-          totalTests++; 
-          console.log("=====================================================")
-          console.log("output--> Level1", Level1, "expected--> Level1", expectedLevel1, expectedLevel1 === Level1)
-          console.log("output--> Level2", Level2, "expected--> Level2", expectedLevel2, expectedLevel2 === Level2)
-          console.log("output--> Level3", Level3, "expected--> Level3", expectedLevel3, expectedLevel3 === Level3)
-          const pass = accuracy >= 90 ? true : false;
+          // Subject Comparison
+          if(Level1 === expectedLevel1) subjectAccuracy += 50;
+          if(Level2 === expectedLevel2) subjectAccuracy += 30;
+          if(Level3 === expectedLevel3) subjectAccuracy += 20;
+          
+          console.log("output--> Level1:", Level1," === ", "expected--> Level1:", expectedLevel1, expectedLevel1 === Level1)
+          console.log("output--> Level2:", Level2," === ", "expected--> Level2:", expectedLevel2, expectedLevel2 === Level2)
+          console.log("output--> Level3:", Level3," === ", "expected--> Level3:", expectedLevel3, expectedLevel3 === Level3)
+          
+          
+          // Skill Tags Comparison
+          let correctTags = 0;
+          let expectedSkillTagsLength = expectedSkillTags.length
+          for (let i = 0; i < expectedSkillTagsLength; i++) {
+              if (skillTags.includes(expectedSkillTags[i])) {
+                  correctTags++;
+              }
+          }
+          console.log("Output skillTags -->", skillTags)
+          console.log("Expected skillTags -->", expectedSkillTags)
+          console.log("Correct Skill Tags", correctTags);
+
+          if (correctTags === 0) skillAccuracy += 0;
+          // Only 1 tag is correct and other tags are wrong in output
+          else if (correctTags === 1 && expectedSkillTagsLength === 2) skillAccuracy += 50;
+          // Only 1 tag is correct and other tags are wrong in output
+          else if (correctTags === 1 && expectedSkillTagsLength === 3) skillAccuracy += 33;
+          // Only 2 tags are correct and other tags are wrong in output
+          else if (correctTags === 2 && expectedSkillTagsLength === 3) skillAccuracy += 66;
+          // All expected and output tags are matched
+          else if (correctTags === expectedSkillTagsLength) skillAccuracy += 100;
+          
+          totalSubjectAccuracy += subjectAccuracy
+          totalSkillAccuracy += skillAccuracy
+          testAccuracy = (subjectAccuracy + skillAccuracy) / 2
+          accuracy += testAccuracy 
+          const pass = testAccuracy >= 90 ? true : false;
+          
+          // Logs
+          console.log("Subject Tags Accuracy", subjectAccuracy);
+          console.log("Skill Tags Accuracy", skillAccuracy);
+          console.log("Test Accuracy", testAccuracy)
+          console.log("======================================================")
           return {
-            pass,
-            score: tempAcc,
+            pass: true,
+            score: testAccuracy/100,
             reason: pass ? 'output matched' : 'Output did not matched',
           };
         }
@@ -61,5 +100,9 @@ try {
   console.log(results);
   console.log("total accuracy", accuracy, "Total Tests", totalTests);
   const finalAccuracy = accuracy/totalTests
-  console.log("Commulative Accuracy",finalAccuracy);
+  const finalSubjectAccuracy = totalSubjectAccuracy / totalTests
+  const finalSkillAccuracy = totalSkillAccuracy / totalTests
+  console.log("Total Subject Accuracy: ",finalSubjectAccuracy)
+  console.log("Total Skill Accuracy: ",finalSkillAccuracy)
+  console.log("Overall Prompt Accuracy",finalAccuracy);
 })();

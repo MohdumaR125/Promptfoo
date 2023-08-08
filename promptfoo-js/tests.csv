@@ -2,10 +2,10 @@ question,__expected
 """How many zeros are there at the end in product 213 × 510?
 
 (1) 13 (2) 10
-(3) 23 (4) 33""","{""subjectTags"": {""Level1"": ""Numerical Aptitude"", ""Level2"": ""Number Systems"", ""Level3"": ""Number of Zeroes""}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}"
+(3) 23 (4) 33""","similar(0.8):{""subjectTags"": {""Level1"": ""Numerical Aptitude"", ""Level2"": ""Number Systems"", ""Level3"": ""Number of Zeroes""}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}"
 "The density of water is 1 g/cc. This is strictly valid at
 (1) 0°C 
 (2) 4°C
 (3) 25°C 
-(4) 100°C","{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Mechanics"", ""Level3"": ""Fluid Mechanics""}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}"
-"Six years ago Parvez’s age was same as the present age of Manish. If the present age of Parvez is one-fourth more than that of Manish’s present age, then in how many years will Parvez’s age become double of Manish’s present age?","{""subjectTags"": {""Level1"": ""Reasoning"", ""Level2"": ""Verbal Reasoning"", ""Level3"": ""Coding and Decoding""}, ""skillTags"": [""Inferring"", ""Knowledge of subject specific techniques and methods""]}"
+(4) 100°C","similar(0.8):{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Mechanics"", ""Level3"": ""Fluid Mechanics""}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}"
+"Six years ago Parvez’s age was same as the present age of Manish. If the present age of Parvez is one-fourth more than that of Manish’s present age, then in how many years will Parvez’s age become double of Manish’s present age?","similar(0.9):{""subjectTags"": {""Level1"": ""Reasoning"", ""Level2"": ""Verbal Reasoning"", ""Level3"": ""Coding and Decoding""}, ""skillTags"": [""Inferring"", ""Knowledge of subject specific techniques and methods""]}"
