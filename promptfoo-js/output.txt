@@ -1,2 +1,179 @@
-"{""raw"":""Rephrase this in English: {{body}}"",""display"":""Rephrase this in English: {{body}}""}","{""raw"":""Rephrase this like a pirate: {{body}}"",""display"":""Rephrase this like a pirate: {{body}}""}"
-[PASS] (1.00) Can you please rephrase this sentence in English?,"[PASS] (1.00) Arrr, me hearties! Give me a hand in rephrasin' this like a true pirate, ye scurvy dogs!"
+"{""raw"":""You are an educator who has been tasked to classify and tag questions.\nStep 1 - You want to add subject tags and drilled down hierarchical topics and subtopic tags to questions. Only select the subject tags which are mention in \""Subjects\"" inside triple quote. Answer should be in JSON format like { \""subjectTags\"":{\""Level1\"": \""Subject tag 1\"", \""Level2\"": \""Topic Tag 1\"", \""Level3\"": \""Sub-Topic Tag 1\""} } . \nsubjectTags can have multiple items in its array if possible, if different subject or topic or sub topic found.\nFor example {\""subjectTags\"": {\""Level1\"": \""Numerical Aptitude\"", \""Level2\"": \""series\"", \""Level3\"": \""Arithmetic Progression\""}.\n\nChoose from one of the following subjects.\nSubjects: “”” History, Indian History, World History, Numerical Aptitude, Physics, Polity, Reasoning, Static General Knowledge, Geography, Indian Art and Culture, Statistics, Biology, Business Management, Economy, General Awareness, Chemistry, English, Environment, Verbal Ability, English Grammar, Vocabulary, Verbal Reasoning, Non-Verbal Reasoning, Analytical Reasoning, Indian Art and Culture, Disaster Management, Financial Awareness, Insurance Awareness, Legal Awareness, Banking Awareness, Marketing Awareness, Computer Awareness, Numerical Aptitude, and Data Interpretation.\nGeneral Physics, Mechanics, Number Systems, Number of Zeroes, Fluid Mechanics, Verbal Reasoning, Coding and Decoding, Thermal Physics, Electricity, Electronic Devices, Magnetism, Optics, Properties of Solids and Liquids, Kinetic theory of gases, Communications Systems, Scope of Economics, Nature of Economics, Sectors of Economy, Economic Systems, Distribution Systems, Capitalism, National Income, Cost and Price of National Income, Growth, Development and Happiness, Indian Economy, Economic Reforms, Inflation, Business Cycle, Agriculture and Food Management, Industry, and Infrastructure, Service Sector, Indian Financial Market, Banking in India, Insurance in India, Security market in India, External Sector In India, International Economic Organisations and India, Tax Structure in India, Public Finance in India, Sustainability and Climate Change- India and the World, Human Development in India, Socio-Economic Issues in India, Law of Demand and Supply, Theory of Production and Cost, Markets and Price Determination, Comptroller and Auditor General of India\n”””.\n\nStep 2 - You want to add a Skill tag according to Bloom's taxonomy. You are using 2 dimensions of Bloom's taxonomy, first is the Cognitive dimension and second is the knowledge-based dimension in which the following tags are given and you have to choose skill tags from the delimited by triple quotes below.\n\nSkill tags: “””Recognizing, Recalling, Implementing, Inferring, Interpreting, Classifying, Inferring, Implementing, Comparing, Organizing, Differentiating, Analyzing, Attributing, Checking, Knowledge of terminology, Knowledge of specific details and elements, Knowledge of classifications and categories, Knowledge of subject specific skills and algorithms, Knowledge of subject specific techniques and methods, Knowledge of principles and generalizations”””\n\nAnswer should be single line JSON for e.g. {\""skillTags\"": [\""tag1\"", \""tag2\"",\""tag3\"", …]}. skill tags may be 1 or more than one. \nSkill tag should be attached on the basis of direction given below :\n\nRecognizing: In questions which are in the format of present or future questions and also suggested with all general awareness. For example “At what temperature, both Celsius and Fahrenheit scales will show the identical readings?”, “What is the SI Unit of Acceleration?”.\n\nRecalling: In questions which are in the format of past questions. For example “The eighth-century tripartite power struggle was among which of the following?”\n\nInterpreting: Solve/answer the question by understanding the meaning on what question is focusing or highlighting or when words these words found in the question “””classify, covert, conclude, demonstrate, describe, discuss, explain, identify, illustrate, locate, paraphrase, predict, recognize, report, select, summarize, translate, most appropriate, meaning, substitute, synonyms, antonyms, idioms, phrases”””. interpreting tag means the act of explaining, reframing, or otherwise showing your own understanding of something. example - In a certain code language, 'mee muk pic' is 'roses are yellow', 'nil dic' is 'white flowers', and 'pic muk dic' is 'flowers are fruits'. What is the code for 'white' in that code language?\nNow, analyze the whole explanation and example and Suggest an Interpreting tag to questions.\n\nExemplifying: Questions that ask to give examples of anything\n\nClassifying: Questions which ask to classify or categorize the given things/topics.\n\nSummarizing: If the question is asking to summarize anything or wants any information in a brief manner. \n\nInferring: When you have to draw a logical conclusion from the given information or context or when no direction is given to how to solve the given question or problem.\n\nComparing: when question is asked to compare or same way as another number,letter or group \n\nImplementing: If a learned knowledge is implemented to answer any unfamiliar situation/problem to solve the question. Implementing tags must always be suggested with Knowledge of subject-specific techniques and methods. Whenever a question require to use of some formula you must suggest Implementing it with the Knowledge of subject-specific techniques and methods\n\n\nOrganizing: When the question asks to organize the information about any topic or the given material/information in a way that it fits or functions within a structure or when a question is asked to arrange or rearrange the given data.\n\nChecking: when question is asked to find the incorrect or wrongly spelt or not is given in the main heading or direction.\n\nKnowledge of terminology: this knowledge tag is suggested when a specific term is given or question is asking a specific term related to their field} {Knowledge of specific details and elements, this knowledge tag is suggested when the question is asking for some details or with every general awareness question \n\nKnowledge of classifications and categories: when question is asked to classify the data on the basis of their category.\n\nKnowledge of principles and generalizations: when any principle or formula is asked in question \n\nKnowledge of subject specific skills and algorithms: This tag used when according to question there is a requirement to use the specific skills like if the question asked to select the correct alternative to indicate the arrangement of the following words in a logical and meaningful order. Here, in this question, one should have the skills of arranging in order. If according to question one should have to do comparison or analysis then it will be recognized as skill. Analyse yourself the above explanation and suggest the tag at required place.\n\nKnowledge of subject specific techniques and methods: this skill tag should be attached with implementing skill tag or when their is a formula required to applied in queston. \n\nQuestion: {{question}}"",""display"":""You are an educator who has been tasked to classify and tag questions.\nStep 1 - You want to add subject tags and drilled down hierarchical topics and subtopic tags to questions. Only select the subject tags which are mention in \""Subjects\"" inside triple quote. Answer should be in JSON format like { \""subjectTags\"":{\""Level1\"": \""Subject tag 1\"", \""Level2\"": \""Topic Tag 1\"", \""Level3\"": \""Sub-Topic Tag 1\""} } . \nsubjectTags can have multiple items in its array if possible, if different subject or topic or sub topic found.\nFor example {\""subjectTags\"": {\""Level1\"": \""Numerical Aptitude\"", \""Level2\"": \""series\"", \""Level3\"": \""Arithmetic Progression\""}.\n\nChoose from one of the following subjects.\nSubjects: “”” History, Indian History, World History, Numerical Aptitude, Physics, Polity, Reasoning, Static General Knowledge, Geography, Indian Art and Culture, Statistics, Biology, Business Management, Economy, General Awareness, Chemistry, English, Environment, Verbal Ability, English Grammar, Vocabulary, Verbal Reasoning, Non-Verbal Reasoning, Analytical Reasoning, Indian Art and Culture, Disaster Management, Financial Awareness, Insurance Awareness, Legal Awareness, Banking Awareness, Marketing Awareness, Computer Awareness, Numerical Aptitude, and Data Interpretation.\nGeneral Physics, Mechanics, Number Systems, Number of Zeroes, Fluid Mechanics, Verbal Reasoning, Coding and Decoding, Thermal Physics, Electricity, Electronic Devices, Magnetism, Optics, Properties of Solids and Liquids, Kinetic theory of gases, Communications Systems, Scope of Economics, Nature of Economics, Sectors of Economy, Economic Systems, Distribution Systems, Capitalism, National Income, Cost and Price of National Income, Growth, Development and Happiness, Indian Economy, Economic Reforms, Inflation, Business Cycle, Agriculture and Food Management, Industry, and Infrastructure, Service Sector, Indian Financial Market, Banking in India, Insurance in India, Security market in India, External Sector In India, International Economic Organisations and India, Tax Structure in India, Public Finance in India, Sustainability and Climate Change- India and the World, Human Development in India, Socio-Economic Issues in India, Law of Demand and Supply, Theory of Production and Cost, Markets and Price Determination, Comptroller and Auditor General of India\n”””.\n\nStep 2 - You want to add a Skill tag according to Bloom's taxonomy. You are using 2 dimensions of Bloom's taxonomy, first is the Cognitive dimension and second is the knowledge-based dimension in which the following tags are given and you have to choose skill tags from the delimited by triple quotes below.\n\nSkill tags: “””Recognizing, Recalling, Implementing, Inferring, Interpreting, Classifying, Inferring, Implementing, Comparing, Organizing, Differentiating, Analyzing, Attributing, Checking, Knowledge of terminology, Knowledge of specific details and elements, Knowledge of classifications and categories, Knowledge of subject specific skills and algorithms, Knowledge of subject specific techniques and methods, Knowledge of principles and generalizations”””\n\nAnswer should be single line JSON for e.g. {\""skillTags\"": [\""tag1\"", \""tag2\"",\""tag3\"", …]}. skill tags may be 1 or more than one. \nSkill tag should be attached on the basis of direction given below :\n\nRecognizing: In questions which are in the format of present or future questions and also suggested with all general awareness. For example “At what temperature, both Celsius and Fahrenheit scales will show the identical readings?”, “What is the SI Unit of Acceleration?”.\n\nRecalling: In questions which are in the format of past questions. For example “The eighth-century tripartite power struggle was among which of the following?”\n\nInterpreting: Solve/answer the question by understanding the meaning on what question is focusing or highlighting or when words these words found in the question “””classify, covert, conclude, demonstrate, describe, discuss, explain, identify, illustrate, locate, paraphrase, predict, recognize, report, select, summarize, translate, most appropriate, meaning, substitute, synonyms, antonyms, idioms, phrases”””. interpreting tag means the act of explaining, reframing, or otherwise showing your own understanding of something. example - In a certain code language, 'mee muk pic' is 'roses are yellow', 'nil dic' is 'white flowers', and 'pic muk dic' is 'flowers are fruits'. What is the code for 'white' in that code language?\nNow, analyze the whole explanation and example and Suggest an Interpreting tag to questions.\n\nExemplifying: Questions that ask to give examples of anything\n\nClassifying: Questions which ask to classify or categorize the given things/topics.\n\nSummarizing: If the question is asking to summarize anything or wants any information in a brief manner. \n\nInferring: When you have to draw a logical conclusion from the given information or context or when no direction is given to how to solve the given question or problem.\n\nComparing: when question is asked to compare or same way as another number,letter or group \n\nImplementing: If a learned knowledge is implemented to answer any unfamiliar situation/problem to solve the question. Implementing tags must always be suggested with Knowledge of subject-specific techniques and methods. Whenever a question require to use of some formula you must suggest Implementing it with the Knowledge of subject-specific techniques and methods\n\n\nOrganizing: When the question asks to organize the information about any topic or the given material/information in a way that it fits or functions within a structure or when a question is asked to arrange or rearrange the given data.\n\nChecking: when question is asked to find the incorrect or wrongly spelt or not is given in the main heading or direction.\n\nKnowledge of terminology: this knowledge tag is suggested when a specific term is given or question is asking a specific term related to their field} {Knowledge of specific details and elements, this knowledge tag is suggested when the question is asking for some details or with every general awareness question \n\nKnowledge of classifications and categories: when question is asked to classify the data on the basis of their category.\n\nKnowledge of principles and generalizations: when any principle or formula is asked in question \n\nKnowledge of subject specific skills and algorithms: This tag used when according to question there is a requirement to use the specific skills like if the question asked to select the correct alternative to indicate the arrangement of the following words in a logical and meaningful order. Here, in this question, one should have the skills of arranging in order. If according to question one should have to do comparison or analysis then it will be recognized as skill. Analyse yourself the above explanation and suggest the tag at required place.\n\nKnowledge of subject specific techniques and methods: this skill tag should be attached with implementing skill tag or when their is a formula required to applied in queston. \n\nQuestion: {{question}}""}",questions
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Simple Interest""], ""Level3"": [""Compound Interest""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Simple interest on a certain sum of money for 3 years at 8% per annum is half the compound interest on Rs. 16000 for 2 years at 10% per annum. The sum placed on simple interest is :
+
+(1) Rs. 14000
+(2) Rs. 3500
+(3) Rs. 7000
+(4) Rs. 5600"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Discounts""], ""Level3"": [""Types of Discounts""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Ticket for an adult is Rs. 1600 and a child is Rs. 1200. 1 child goes free with two adults. If a group has 23 adults and 10 children, what is the discount the group gets?
+
+(1) 25.25 per cent
+(2) 24.52 per cent
+(3) 25.77 per cent
+(4) 31.60 per cent"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Mensuration""], ""Level3"": [""Planes"", ""2D Figures"", ""Circle""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","A quadrilateral is inscribed in a circle. If the opposite angles of the quadrilateral are equal and length of its adjacent sides are 6 cm. and 8 cm., what is the area of the circle?
+
+(1) 64S sq. cm
+(2) 25S sq. cm
+(3) 36S sq. cm
+(4) 42S sq. cm"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Number System""], ""Level3"": [""Numbers"", ""Tests Of Divisibility""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Which of the following numbers is completely divisible by 22?
+
+(1) 51572 (2) 51557
+(3) 55036 (4) 42284"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Geometry""], ""Level3"": [""Circles"", ""Chord of Circle"", ""Tangent of Circle""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Chord AB of a circle when extended meets the tangent to the circle at point P. PT is the tangent touching the circle at point T. If lengths of PT and PB are 6 cm. and 4 cm. respectively, what is the length of PA?
+
+(1) 12 cm. (2) 18 cm.
+(3) 27 cm. (4) 2 cm."
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Number System""], ""Level3"": [""Numbers"", ""Number of zeros""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","How many zeros are there at the end in product 213 × 510?
+
+(1) 13 (2) 10
+(3) 23 (4) 33"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Time, Speed and Distance""], ""Level3"": [""Concept of Motion"", ""Distance Formula""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","A man travels some distance at a speed of 15 km/hr and he returns at a speed of 6 km/hr. If the total time taken by the man is 14 hours, then what is the distance (in km)?
+
+(1) 48 (2) 60
+(3) 45 (4) 56"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Time And Work""], ""Level3"": [""Concept of Efficiency""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","S can do a piece of work in 80 days and T in 60 days. With the help of U, they finish the work in 20 days. In how many days U alone can do the same work?
+
+(1)40 (2) 60
+(3)48 (4) 80"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Compound Interest""], ""Level3"": [""Conditions for Compound Interest"", ""Interest is compounded Half-yearly""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","A bank offers 5% compound interest per half year. A customer deposits Rs. 8000 each on 1st January and 1st July of a year. At the end of the year, the amount he would have gained by way of interest is
+
+(1) Rs. 2440 (2) Rs. 610
+(3) Rs. 1220 (4) Rs. 305"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Numerical Aptitude""], ""Level2"": [""Average""], ""Level3"": [""Average type"", ""Alligation method"", ""Mean Price""]}, ""skillTags"": [""Implementing"", ""Knowledge of subject specific techniques and methods""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","The mean of marks secured by 55 students in division-A of class X is 55 that of 45 students of division-B is 51 and that of 40 students of division-C is 42. What is the mean of marks of the students of three divisions of class X?
+
+(1) 51.3 (2) 50.6
+(3) 52 (4) 53.4"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""]}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","The instrument that measures and records the relative humidity of air is
+
+(1) Hydrometer (2) Hygrometer
+(3) Lactometer (4) Barometer"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""General Physics""], ""Level3"": [""Measurement"", ""Dimensions of Physics quantities""]}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Which of the following pairs of physical quantities have the same dimensions?
+
+(1) Force and Power
+(2) Work and Power
+(3) Work and Energy
+(4) Momentum and Power"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Mechanics""], ""Level3"": [""Motion"", ""Laws of Motion""]}, ""skillTags"": [""Recognizing"", ""Knowledge of principles and generalizations""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Which conservation principle is applicable in the case of the motion of a rocket?
+
+(1) Conservation of mass
+(2) Conservation of charge
+(3) Conservation of momentum
+(4) Conservation of energy"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Thermal Physics""], ""Level3"": [""Heat Transfer"", ""Change of State""]}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Match the following:
+
+    Process                    Changes
+
+a. Evaporation         1. Liquid into gas
+b. Sublimation         2. Solid into gas
+c. Freezing              3. Solid into liquid
+d. Melting                4. Liquid into Solid"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Mechanics""], ""Level3"": [""Momentum""]}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","A metal ball and a rubber ball, both having the same mass,strike a wall normally with thesame velocity. The rubber ballrebounds and the metal ball does not rebound. It can be concluded that
+
+(1) The rubber ball suffers greater change in momentum
+(2) The metal ball suffers greater change in momentum
+(3) Both suffer the same change in momentum
+(4) The initial momentum of the rubber ball is greater than that of the metal ball"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Mechanics""], ""Level3"": [""Fluid Mechanics""]}, ""skillTags"": [""Recognizing"", ""Factual Knowledge / Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","The density of water is 1 g/cc. This is strictly valid at
+(1) 0°C 
+(2) 4°C
+(3) 25°C 
+(4) 100°C"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Mechanics""], ""Level3"": [""Energy"", ""Kinetic energy""]}, ""skillTags"": [""Recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","If both the mass and the velocity of a body is increased to twice of their magnitude, the kinetic energy will increase by
+
+(1) 2 times (2) 4 times
+(3) 8 times (4) 16 times"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""General Physics""], ""Level3"": [""Measurement"", ""Dimensional analysis""]}, ""skillTags"": [""Implementing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","In a particular system, the units of length, mass and time are chosen to be 10 cm, 10 g and 0.1 s respectively. The unit of force in this system will be equivalent to
+
+(1) 0.1 N (2) 1 N
+(3) 10 N (4) 100 N"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Thermal Physics""], ""Level3"": [""Laws of thermodynamics""]}, ""skillTags"": [""recognizing"", ""Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","The absolute zero is a temperature at which _______
+
+(1) molecular motion in a gas
+would cease
+(2) water freezes
+(3) all gases become liquid
+(4) all gases become solid"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Mechanics""], ""Level3"": [""Momentum""]}, ""skillTags"": [""Implementing"", ""Techniques and method""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","A body of mass 8 kg is moving with a velocity of 4 m/s, find its momentum.
+
+(1) 2 (2) 64
+(3) 32 (4) 4"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Physics""], ""Level2"": [""Optics""], ""Level3"": [""Ray optics"", ""Reflection""]}, ""skillTags"": [""Recognizing"", ""Factual Knowledge / Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","If objects appear enlarged and inverted in a rear view mirror, then which type of mirror is used?
+
+(1) Concave (2) Convex
+(3) Cylindrical (4) Plane"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Chemistry""], ""Level2"": [""In-organic Chemistry""], ""Level3"": [""Structure Of Atom"", ""Subatomic Particles""]}, ""skillTags"": [""Recognizing"", ""Factual Knowledge /  Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Which one of the following has greatest mass ?
+
+(1) electron 
+(2) proton
+(3) neutron
+(4) hydrogen nucleus"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Chemistry""], ""Level2"": [""In-organic Chemistry""], ""Level3"": [""Classification Of Elements And Periodicity In Properties"", ""Ionization Enthalpy""]}, ""skillTags"": [""Recognizing"", "" Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","Ionisation energy of nitrogen is greater than that of oxygen because nitrogen has
+
+(1) high bond dissociation energy
+(2) smaller atomic radius
+(3) stable half filled 2p sub level
+(4) high nuclear charge"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Chemistry""], ""Level2"": [""Inorganic Chemistry""], ""Level3"": [""Structure Of Atom"", ""Subatomic Particles"", ""Thomson's Model Of Atom""]}, ""skillTags"": [""Recognizing"", "" Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","J.J. Thomson’s proposed model of action is generally called ................... model.
+
+(1) Cream and cake
+(2) Plum and pudding
+(3) Plum and cake
+(4) Cream and pudding"
+"[FAIL] (0.00) Expected output ""{""subjectTags"": {""Level1"": [""Chemistry""], ""Level2"": [""Organic Chemistry""], ""Level3"": [""Chemical Bonding And Molecular Structure"", ""Bond Parameters""]}, ""skillTags"": [""Recognizing"", "" Knowledge of specific details and elements""]}""
+---
+{""subjectTags"": {""Level1"": ""Physics"", ""Level2"": ""Thermal Physics"", ""Level3"": ""Temperature Scales""}, ""skillTags"": [""Recognizing""]}","The relation between bond length and bond energy is
+
+(1) lower the bond energy, shorter the bond length
+(2) they are not related
+(3) higher the bond energy, shorter the bond length
+(4) higher the bond energy, longer the bond length"
