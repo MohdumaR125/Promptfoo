@@ -130,9 +130,9 @@ try {
             })
 
             // Subject Comparison
-            console.log("output--> Level1:", Level1, " === ", "expected--> Level1:", expectedLevel1, expectedLevel1 === Level1)
-            console.log("output--> Level2:", Level2, " === ", "expected--> Level2:", expectedLevel2, expectedLevel2 === Level2)
-            console.log("output--> Level3:", Level3, " === ", "expected--> Level3:", expectedLevel3, expectedLevel3 === Level3)
+            console.log("output--> Level1:", Level1, " === ", "expected--> Level1:", expectedLevel1)
+            console.log("output--> Level2:", Level2, " === ", "expected--> Level2:", expectedLevel2)
+            console.log("output--> Level3:", Level3, " === ", "expected--> Level3:", expectedLevel3)
 
 
             // Skill Tags Comparison
