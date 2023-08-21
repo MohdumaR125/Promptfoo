@@ -1,5 +1,6 @@
-const promptfoo = require("promptfoo");
-let fs = require("fs")
+import promptfoo from "promptfoo";
+import fs from "fs";
+
 let prompts = "";
 try {
   prompts = fs.readFileSync('prompts.txt', 'utf8');
@@ -57,18 +58,20 @@ try {
 
             const expectedSubjectTagsArr = Object.values(expectedSubjectTags).flat();
             const subjectTagsArr = Object.values(subjectTags);
-            expectedSubjectTagsArr.forEach((el, index) => {
+            expectedSubjectTagsArr.forEach( (el, index) => {
               // Matching
-              const isMatch = subjectTagsArr.some((element, i) => {
+              const isMatch = subjectTagsArr.some(async (element, i) => {
                 if (element === el) {
                   sequence.push(i);
                   return true;
                 }
+                const isSimilar = await promptfoo.assertions.matchesSimilarity(el, element, 0.9)
+                // console.log(expectedLevel3, "====", Level3);
+                // console.log(el, "====", element);
+                // console.log("Similarity ====> ", isSimilar)
+                if(isSimilar.pass) return true; 
                 return false;
               });
-
-              // if output count is equal or more than expected count
-              if (expectedCount === outputCount || expectedCount < outputCount) {
 
                 // If expected count is 1
                 if (expectedCount === 1) {
@@ -96,25 +99,16 @@ try {
                     else sequence.push(null);
                   }
                   if (index === 1) {
-                    if (isMatch) subjectAccuracy += 30;
-                    else sequence.push(null);
-                  }
-                  if (index === 2) {
                     if (isMatch) subjectAccuracy += 20;
                     else sequence.push(null);
                   }
+                  if (index === 2) {
+                    if (isMatch) subjectAccuracy += 30;
+                    else sequence.push(null);
+                  }
 
                 }
 
-                // If output is less than expected
-              } else {
-                if (isMatch) {
-                  subjectAccuracy += Math.floor(100 / expectedCount);
-                  sequence.push(expectedLevel1.indexOf(Level1));
-                } else {
-                  sequence.push(null);
-                }
-              }
             });
 
             // Check Sequence 
