@@ -1,0 +1,20 @@
+expected: general awareness,computer awareness,knowledge of terminology 
+ output: computer awareness,general awareness,general awareness 
+expected: general awareness,computer awareness,html 
+ output: computer awareness,html,noshade 
+expected: general awareness,computer awareness,computer security,malware 
+ output: computer awareness,cybersecurity,malware 
+expected: general awareness,computer awareness,operating system 
+ output: computer awareness,programming,software development 
+expected: general awareness,computer awareness,computer hardware 
+ output: computer awareness,input and output devices,classification of devices 
+expected: general awareness,computer awareness,knowledge of terminology 
+ output: computer awareness,general awareness,general awareness 
+expected: general awareness,computer awareness,html 
+ output: computer awareness,html,noshade 
+expected: general awareness,computer awareness,computer security,malware 
+ output: computer awareness,cybersecurity,malware 
+expected: general awareness,computer awareness,operating system 
+ output: computer awareness,programming,software development 
+expected: general awareness,computer awareness,computer hardware 
+ output: computer awareness,input and output devices,classification of devices 

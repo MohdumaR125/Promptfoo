@@ -12,10 +12,12 @@ try {
   let totalSubjectAccuracy = 0;
   let totalSkillAccuracy = 0;
   let totalTests = 0;
+  let level1Incorrect =0;
+
   const results = await promptfoo.evaluate({
     prompts: [`${prompts}`],
     providers: [
-      'openai:gpt-3.5-turbo',
+      './customApiProvider.cjs',
     ],
     defaultTest: {
       assert: [
@@ -55,23 +57,54 @@ try {
             if (expectedLevel2) expectedCount += 1;
             if (expectedLevel3) expectedCount += 1;
 
-
             const expectedSubjectTagsArr = Object.values(expectedSubjectTags).flat();
+            //converting to lower case
+            expectedSubjectTagsArr.forEach((el,idx)=>{     
+              if(Array.isArray(el)){
+                el.forEach((ele,index)=>{
+                  el[index] = ele.toLowerCase()
+                })
+              }else{
+                expectedSubjectTagsArr[idx] =el.toLowerCase()
+              }
+            })
+            //converting to lower case
             const subjectTagsArr = Object.values(subjectTags);
-            expectedSubjectTagsArr.forEach( (el, index) => {
+            subjectTagsArr.forEach((el,idx)=>{
+              subjectTagsArr[idx] =el.toLowerCase()
+            })
+            expectedSubjectTagsArr.forEach( (expectedTag, index) => {
+              let isMatch
               // Matching
-              const isMatch = subjectTagsArr.some(async (element, i) => {
-                if (element === el) {
-                  sequence.push(i);
-                  return true;
+              if (index ===0){
+                if(expectedTag===subjectTagsArr[0]) {
+                  isMatch =true;
+                }else{
+                  isMatch =false;
+                  level1Incorrect++;
+                  console.log(" incorrect level1 : ", expectedTag,"<--->",subjectTagsArr[0])
+                  if(expectedSubjectTagsArr.includes(subjectTagsArr[0])){
+                    fs.appendFileSync("./mismatchLevel1",`expected: ${expectedSubjectTagsArr} \n output: ${subjectTagsArr} \n`)
+                  }else{
+                    fs.appendFileSync("./incorrectLevel1.txt",`expected: ${expectedSubjectTagsArr} \n output: ${subjectTagsArr} \n`)
+                  }
                 }
-                const isSimilar = await promptfoo.assertions.matchesSimilarity(el, element, 0.9)
-                // console.log(expectedLevel3, "====", Level3);
-                // console.log(el, "====", element);
-                // console.log("Similarity ====> ", isSimilar)
-                if(isSimilar.pass) return true; 
-                return false;
-              });
+
+              }else {
+
+                isMatch = subjectTagsArr.some(async (outputTag, i) => {
+                  if (outputTag === expectedTag) {
+                    sequence.push(i);
+                    return true;
+                  }
+                  const isSimilar = await promptfoo.assertions.matchesSimilarity(expectedTag, outputTag, 0.95)
+                  // console.log(expectedLevel3, "====", Level3);
+                  // console.log(expectedTag, "====", outputTag);
+                  // console.log("Similarity ====> ", isSimilar)
+                  if(isSimilar.pass) return true; 
+                  return false;
+                });
+              }
 
                 // If expected count is 1
                 if (expectedCount === 1) {
@@ -133,6 +166,7 @@ try {
             let correctTags = 0;
             let expectedSkillTagsLength = expectedSkillTags.length
             for (let i = 0; i < expectedSkillTagsLength; i++) {
+
               if (skillTags.includes(expectedSkillTags[i])) {
                 correctTags++;
               }
@@ -193,7 +227,7 @@ try {
     outputPath: 'output.json',
   });
   console.log('RESULTS:');
-  console.log(results);
+  // console.log(results);
   console.log("total accuracy", accuracy, "Total Tests", totalTests);
   const finalAccuracy = accuracy / totalTests
   const finalSubjectAccuracy = totalSubjectAccuracy / totalTests
@@ -201,4 +235,5 @@ try {
   console.log("Total Subject Accuracy: ", finalSubjectAccuracy)
   console.log("Total Skill Accuracy: ", finalSkillAccuracy)
   console.log("Overall Prompt Accuracy", finalAccuracy);
+  console.log("No. of incorrect level 1 : ",level1Incorrect)
 })();

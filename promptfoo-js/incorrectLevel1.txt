@@ -1,0 +1,104 @@
+expected: chemistry,in-organic chemistry,structure of atom,subatomic particles 
+ output: physics,atomic structure,particle mass 
+expected: chemistry,inorganic chemistry,structure of atom,subatomic particles,thomson's model of atom 
+ output: physics,atomic structure,j.j. thomson's model 
+expected: chemistry,organic chemistry,environmental pollution,importance of dissolved oxygen in water,biochemical oxygen demand (bod) and chemical oxygen demand (cod) 
+ output: environment 
+expected: chemistry,in-organic chemistry,structure of atom,subatomic particles 
+ output: physics,atomic structure,subatomic particles 
+expected: indian art and culture,indian architecture, sculpture, and pottery,indian architecture,classification of indian architecture,ancient india,post mauryan art,architecture,rock-cut caves,chaitya 
+ output: history,indian art and culture,buddhism 
+expected: history,indian history,medieval india,cultural development in india,the sufi movement,sufis,organization of sufis,pir 
+ output: indian art and culture,sufi tradition,meaning of 'pir' 
+expected: geography,world geography,the universe and the solar system,the solar system,planet,inner planets,mars 
+ output: general awareness 
+expected: geography,world geography,the universe and the solar system,international date line 
+ output: general awareness 
+expected: geography,climatology,atmosphere,homosphere,troposphere 
+ output: physics,atmosphere,troposphere 
+expected: world geography,oceanography,ocean currents,major currents 
+ output: general awareness 
+expected: geography,climatology,winds,variable winds,polar vortex 
+ output: general awareness 
+expected: information and communication technology,networks,knowledge of specific details and elements 
+ output: computer awareness,networking,communication network 
+expected: general awareness,computer awareness,abbreviation 
+ output: numerical aptitude,series,data sizes 
+expected: reasoning,verbal reasoning,venn diagram,identification of relation based venn diagram,relation between three objects or things or places or persons 
+ output: biology,botany,plant anatomy 
+expected: reasoning,verbal reasoning,logical arrangement of word,meaningful arrangement of words 
+ output: general awareness 
+expected: reasoning,verbal reasoning,calendar 
+ output: numerical aptitude,calendar,day of the week 
+expected: reasoning,verbal reasoning,ranking and time sequence test 
+ output: numerical aptitude,sequences and series,position and ranking 
+expected: reasoning,verbal reasoning,series,number series,subtraction series 
+ output: numerical aptitude,series,arithmetic progression 
+expected: reasoning,verbal reasoning,series,number series,addition series 
+ output: numerical aptitude,series,arithmetic progression 
+expected: reasoning,verbal reasoning,ranking and time sequence test,position test,rank of a person  or  object,from top  or  bottom 
+ output: numerical aptitude,series,number series 
+expected: english,verbal ability,match the columns 
+ output: reasoning,verbal reasoning,sentence formation 
+expected: english,verbal ability,close test 
+ output: general awareness 
+expected: english,verbal ability,spotting errors 
+ output: economy,technological strengths,economic imperatives 
+expected: english,verbal ability,fillers,standalone fillers 
+ output: general awareness 
+expected: english,verbal ability,reading comprehension 
+ output: economy,brazilian economy,budgetary woes 
+expected: english,verbal ability,sentence jumbles 
+ output: polity,constitutional law,validity of biometric scheme and enabling law 
+expected: chemistry,in-organic chemistry,structure of atom,subatomic particles 
+ output: physics,atomic structure,particle mass 
+expected: chemistry,inorganic chemistry,structure of atom,subatomic particles,thomson's model of atom 
+ output: physics,atomic structure,j.j. thomson's model 
+expected: chemistry,organic chemistry,environmental pollution,importance of dissolved oxygen in water,biochemical oxygen demand (bod) and chemical oxygen demand (cod) 
+ output: environment 
+expected: chemistry,in-organic chemistry,structure of atom,subatomic particles 
+ output: physics,atomic structure,subatomic particles 
+expected: indian art and culture,indian architecture, sculpture, and pottery,indian architecture,classification of indian architecture,ancient india,post mauryan art,architecture,rock-cut caves,chaitya 
+ output: history,indian art and culture,buddhism 
+expected: history,indian history,medieval india,cultural development in india,the sufi movement,sufis,organization of sufis,pir 
+ output: indian art and culture,sufi tradition,meaning of 'pir' 
+expected: geography,world geography,the universe and the solar system,the solar system,planet,inner planets,mars 
+ output: general awareness 
+expected: geography,world geography,the universe and the solar system,international date line 
+ output: general awareness 
+expected: geography,climatology,atmosphere,homosphere,troposphere 
+ output: physics,atmosphere,troposphere 
+expected: world geography,oceanography,ocean currents,major currents 
+ output: general awareness 
+expected: geography,climatology,winds,variable winds,polar vortex 
+ output: general awareness 
+expected: information and communication technology,networks,knowledge of specific details and elements 
+ output: computer awareness,networking,communication network 
+expected: general awareness,computer awareness,abbreviation 
+ output: numerical aptitude,series,data sizes 
+expected: reasoning,verbal reasoning,venn diagram,identification of relation based venn diagram,relation between three objects or things or places or persons 
+ output: biology,botany,plant anatomy 
+expected: reasoning,verbal reasoning,logical arrangement of word,meaningful arrangement of words 
+ output: general awareness 
+expected: reasoning,verbal reasoning,calendar 
+ output: numerical aptitude,calendar,day of the week 
+expected: reasoning,verbal reasoning,ranking and time sequence test 
+ output: numerical aptitude,sequences and series,position and ranking 
+expected: reasoning,verbal reasoning,series,number series,subtraction series 
+ output: numerical aptitude,series,arithmetic progression 
+expected: reasoning,verbal reasoning,series,number series,addition series 
+ output: numerical aptitude,series,arithmetic progression 
+expected: reasoning,verbal reasoning,ranking and time sequence test,position test,rank of a person  or  object,from top  or  bottom 
+ output: numerical aptitude,series,number series 
+expected: english,verbal ability,match the columns 
+ output: reasoning,verbal reasoning,sentence formation 
+expected: english,verbal ability,close test 
+ output: general awareness 
+expected: english,verbal ability,reading comprehension 
+ output: economy,brazilian economy,budgetary woes 
+expected: english,verbal ability,spotting errors 
+ output: economy,technological strengths,economic imperatives 
+expected: english,verbal ability,sentence jumbles 
+ output: polity,constitutional law,validity of biometric scheme and enabling law 
+expected: english,verbal ability,fillers,standalone fillers 
+ output: general awareness 
