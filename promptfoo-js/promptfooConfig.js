@@ -24,6 +24,11 @@ try {
         {
           type: "javascript",
           value: (output, testCase) => {
+            // console.log("output",output)
+            // const pattern = /{[^}]*}}/;
+            // const matches = output.match(pattern);
+            // output = JSON.parse(matches[0])
+            // console.log(output)
             console.log("======================================================")
             totalTests++;
             console.log(`<<< TEST ${totalTests}`);
@@ -31,8 +36,9 @@ try {
             let subjectAccuracy = 0
             let skillAccuracy = 0
             // Output
-            const response = JSON.parse(output)
-            const { subjectTags, skillTags } = response
+            // const response = JSON.parse(matches[0])
+            // const { subjectTags, skillTags } = response
+            const subjectTags =JSON.parse(output)
             const { Level1, Level2, Level3 } = subjectTags
 
             // Expected
@@ -237,3 +243,5 @@ try {
   console.log("Overall Prompt Accuracy", finalAccuracy);
   console.log("No. of incorrect level 1 : ",level1Incorrect)
 })();
+
+

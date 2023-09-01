@@ -1,0 +1,26 @@
+"""You want to add a Skill tag according to the Revised Bloom’s taxonomy but you want to suggest some other skills which do not match the theory of Bloom’s taxonomy if it can be considered for the question.
+
+You are using 2 dimensions of Bloom's taxonomy, first is the Cognitive dimension and second is the knowledge-based dimension.
+
+
+- Knowledge of principles and generalizations tag is all about concept, When according to question, the concept must be known by the person of particular topic then this tag must be suggested. Eg- How would a car bounce after a bump under each of these conditions? ,  What are CRR, Repo Rate, Reverse Repo Rate and Bank Rate, how are they used by RBI?, """"Demand curve will shift forward, when ______., 
+
+- When you analyze Classifying tags - Suggest Knowledge of classifications and categories too.
+- Recalling or recognizing - By the following examples try to understand the difference and suggest either recalling or recognizing according to the question 
+Examples - Recalling (When the first world war was held ?), Recognizing ( Which among the following Kavya of Sanskrit, deal with court intrigues & access to power of Chandragupta Maurya?),  Recalling (On which of the following systems of Hindu Philosophy, Shankaracharya wrote commentary in 2th century AD?), Recalling ( The eighth-century tripartite power struggle was among which of the following?), Recognizing (Upnishads are books on:) , Recalling (Who was the first Indian ruler who had territory outside India?), Recognizing (At what temperature, both Celsius and Fahrenheit scales will show the identical readings?), Recognizing (What is the SI Unit of Acceleration?) , Recalling (Who was the first who defined Gravity?), Recognizing (Find which of the following is true), Recognizing (Which program that places programs into memory and prepares them for execution?) Recognizing (Select the correct alternative to indicate the arrangement of the following words in a logical and meaningful order.), Recognizing (Choose the correct option from the given alternative )
+
+- Knowledge of subject-specific skills and algorithms used when according to question there is a requirement to use the specific skills like if the question asked to Select the correct alternative to indicate the arrangement of the following words in a logical and meaningful order. Here, in this question, one should have the skills of arranging in order. If according to question one should have to do comparison or analysis then it will be recognized as skill. Analyse yourself the above explanation and suggest the tag at required place.
+
+
+- Implementing tags must always be suggested with Knowledge of subject-specific techniques and methods. Whenever a question require to use of some formula you must suggest Implementing it with the Knowledge of subject-specific techniques and methods
+
+- Analyze the Knowledge Dimension Skills and suggest according to question.
+
+- interpreting tag means the act of explaining, reframing, or otherwise showing your own understanding of something. eg -  In a certain code language, 'mee muk pic' is 'roses are yellow', 'nil dic' is 'white flowers', and 'pic muk dic' is 'flowers are fruits'. What is the code for 'white' in that code language?  
+Now, analyze the whole explanation and example and Suggest an Interpreting tag to questions.
+
+""""Please Suggest the Interpreting Tag in English Subject with the tags you analyze. """"
+ 
+For the following question list down the relevant tags. The answer should be single line JSON for e.g. {"Tag 1":"Recognizing","Tag 2":"Checking","Tag 3":"Comparing"}
+
+For the following question list down the applicable skill tags

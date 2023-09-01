@@ -1,5 +1,6 @@
 // customApiProvider.js
 const fetch =require("node-fetch")
+const OpenAI =require("openai");
 
 class CustomApiProvider {
   constructor(options) {
@@ -16,31 +17,46 @@ class CustomApiProvider {
 
   async callApi(prompt) {
     // Add your custom API logic here
-    const data = await fetch("https://api.endpoints.anyscale.com/v1/chat/completions",{
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": process.env.TOKEN
-            // 'Content-Type': 'application/x-www-form-urlencoded',
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+  });
+  const chatCompletion = await openai.chat.completions.create({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: prompt }],
+    "functions": [
+      {
+        "name": "parse_subject_tags",
+        "description": "paring subject tags of level1, level2 and level3 for question",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "Level1": {
+              "type": "string",
+              "description": "Level1 which includes subject name, e.g. History"
+            },
+            "Level2": {
+              "type": "string",
+              "description": "Level2 which includes Topic name, e.g. indus valley civilization"
+            },
+            "Level3": {
+              "type": "string",
+              "description": "Level3 which includes sub-topic name, e.g.harrapan civilization"
+            }
           },
-        body : {
-            "model": "meta-llama/Llama-2-70b-chat-hf",
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": 0.7
-          }
-    })
+          "required": ["Level1","Level2","Level3"]
+        }
+      }
+    ]
+});
     // Use options like: `this.config.temperature`, `this.config.max_tokens`, etc.
-
+    
     return {
       // Required
-      output: data.json(),
+      output: await chatCompletion.choices[0].message.function_call.arguments,
 
       // Optional
-      tokenUsage: {
-        total: 10,
-        prompt: 5,
-        completion: 5,
-      },
+      // 
+      
     };
   }
 }
